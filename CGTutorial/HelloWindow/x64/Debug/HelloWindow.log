@@ -1,0 +1,4 @@
+﻿  glad.c
+  Main.cpp
+E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\HelloWindow\Main.cpp(77,10): warning C4101: 'infoLog': unreferenced local variable
+  HelloWindow.vcxproj -> E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\x64\Debug\HelloWindow.exe
