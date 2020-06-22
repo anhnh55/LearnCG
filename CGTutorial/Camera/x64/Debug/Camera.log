@@ -1,11 +1,1 @@
-﻿  Camera.cpp
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Camera\Camera.cpp(190,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Camera\Camera.cpp(182,15): warning C4101: 'direction': unreferenced local variable
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Camera\Camera.cpp(260,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Camera\Camera.cpp(261,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Camera\Camera.cpp(264,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Camera\Camera.cpp(265,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Camera\Camera.cpp(266,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Camera\Camera.cpp(267,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Camera\Camera.cpp(283,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Camera.vcxproj -> E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\x64\Debug\Camera.exe
+﻿

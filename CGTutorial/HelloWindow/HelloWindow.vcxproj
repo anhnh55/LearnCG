@@ -76,8 +76,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\GoogleDrive\Hokkaido\Learn CG\Includes and Libs\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\GoogleDrive\Hokkaido\Learn CG\Includes and Libs\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\Includes and Libs\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Includes and Libs\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

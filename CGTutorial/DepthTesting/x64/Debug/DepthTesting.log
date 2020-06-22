@@ -1,10 +1,1 @@
-﻿  DepthTesting.cpp
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\DepthTesting\DepthTesting.cpp(142,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\DepthTesting\DepthTesting.cpp(204,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\DepthTesting\DepthTesting.cpp(205,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\DepthTesting\DepthTesting.cpp(208,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\DepthTesting\DepthTesting.cpp(209,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\DepthTesting\DepthTesting.cpp(210,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\DepthTesting\DepthTesting.cpp(211,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\DepthTesting\DepthTesting.cpp(227,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  DepthTesting.vcxproj -> E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\x64\Debug\DepthTesting.exe
+﻿

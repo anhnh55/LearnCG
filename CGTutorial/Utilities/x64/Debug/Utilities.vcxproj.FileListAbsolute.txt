@@ -1,2 +1,4 @@
 E:\GoogleDrive\Hokkaido\Learn CG\Includes and Libs\lib\HAUtilities.pdb
 E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\Utilities\x64\Debug\HAUtilities.pdb
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\Includes and Libs\lib\HAUtilities.pdb
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Utilities\x64\Debug\HAUtilities.pdb

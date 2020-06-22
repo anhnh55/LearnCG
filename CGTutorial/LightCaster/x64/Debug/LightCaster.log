@@ -1,11 +1,1 @@
-﻿  LightCaster.cpp
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\LightCaster\LightCaster.cpp(247,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\LightCaster\LightCaster.cpp(239,15): warning C4101: 'direction': unreferenced local variable
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\LightCaster\LightCaster.cpp(387,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\LightCaster\LightCaster.cpp(388,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\LightCaster\LightCaster.cpp(391,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\LightCaster\LightCaster.cpp(392,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\LightCaster\LightCaster.cpp(393,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\LightCaster\LightCaster.cpp(394,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\LightCaster\LightCaster.cpp(410,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  LightCaster.vcxproj -> E:\GoogleDrive\Hokkaido\Learn CG\CGTutorial\x64\Debug\LightCaster.exe
+﻿
