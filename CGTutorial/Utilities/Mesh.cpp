@@ -53,6 +53,13 @@ namespace HAUtilities {
 		glBindVertexArray(0);
 	}
 
+	void Mesh::SetTextures(vector<Texture> textures)
+	{
+		this->textures.clear();
+		this->textures.resize(textures.size());
+		copy(textures.begin(), textures.end(), this->textures.begin());
+	}
+
 	void Mesh::SetUpMesh() {
 		glGenVertexArrays(1, &VAO);
 		glGenBuffers(1, &VBO);
@@ -78,4 +85,6 @@ namespace HAUtilities {
 
 		glBindVertexArray(0);
 	}
+
+
 }

@@ -1,0 +1,11 @@
+﻿  Dissolve.cpp
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Dissolve\Dissolve.cpp(178,31): warning C4305: 'initializing': truncation from 'double' to 'float'
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Dissolve\Dissolve.cpp(192,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Dissolve\Dissolve.cpp(333,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Dissolve\Dissolve.cpp(334,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Dissolve\Dissolve.cpp(337,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Dissolve\Dissolve.cpp(338,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Dissolve\Dissolve.cpp(339,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Dissolve\Dissolve.cpp(340,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Dissolve\Dissolve.cpp(356,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Dissolve.vcxproj -> E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\Dissolve.exe

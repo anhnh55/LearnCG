@@ -35,6 +35,7 @@ namespace HAUtilities {
 
         Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures);
         void Draw(Shader& shader);
+        void SetTextures(vector<Texture> textures);
     private:
         //  render data
         unsigned int VAO, VBO, EBO;

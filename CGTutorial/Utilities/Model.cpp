@@ -32,6 +32,8 @@ namespace HAUtilities {
         vector<Vertex> vertices;
         vector<Texture> textures;
         vector<unsigned int> indices;
+        meshes.clear();
+
         int stride = 3;
 
         if (hasNormalData) {
@@ -78,7 +80,7 @@ namespace HAUtilities {
         }
 
         meshes.push_back(Mesh(vertices, indices, textures));
-    }
+    }    
 
     void Model::processNode(aiNode* node, const aiScene* scene)
     {
@@ -182,7 +184,6 @@ namespace HAUtilities {
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
             stbi_image_free(data);
         }
         else
@@ -225,5 +226,11 @@ namespace HAUtilities {
             }
         }
         return textures;
+    }
+
+    void Model::SetTextures(vector<Texture> textures) {
+        for (int i = 0; i < meshes.size(); ++i) {
+            meshes[i].SetTextures(textures);
+        }
     }
 }

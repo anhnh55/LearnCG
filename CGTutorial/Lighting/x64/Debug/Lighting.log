@@ -1,1 +1,26 @@
-﻿
+﻿  Lighting.cpp
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Lighting\Lighting.cpp(241,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Lighting\Lighting.cpp(233,15): warning C4101: 'direction': unreferenced local variable
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Lighting\Lighting.cpp(337,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Lighting\Lighting.cpp(338,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Lighting\Lighting.cpp(341,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Lighting\Lighting.cpp(342,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Lighting\Lighting.cpp(343,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Lighting\Lighting.cpp(344,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\Lighting\Lighting.cpp(360,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+glfw3.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(context.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(init.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(input.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(monitor.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(vulkan.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(vulkan.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(window.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_init.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_joystick.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_joystick.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_monitor.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_time.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_thread.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_thread.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_window.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(wgl_context.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(egl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(egl_context.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(osmesa_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(osmesa_context.obj)' or at 'E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\glfw.pdb'; linking object as if no debug info
+  Lighting.vcxproj -> E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\Lighting.exe

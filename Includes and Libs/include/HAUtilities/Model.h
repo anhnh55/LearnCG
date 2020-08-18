@@ -12,10 +12,18 @@ namespace HAUtilities {
         {
             loadModel(path);
         }
+
         Model(float* vertexData, int dataSize, bool hasNormalData, bool hasTexCoordData, vector<string> textures) //load data from float array
         {
             loadModel(vertexData, dataSize, hasNormalData, hasTexCoordData, textures);
         }
+
+        void LoadModel(float* vertexData, int dataSize, bool hasNormalData, bool hasTexCoordData, vector<string> textures) {
+            loadModel(vertexData, dataSize, hasNormalData, hasTexCoordData, textures);
+        }
+
+        void SetTextures(vector<Texture> textures);
+
         void Draw(Shader& shader);
     private:
         // model data

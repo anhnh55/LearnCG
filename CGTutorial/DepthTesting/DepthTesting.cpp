@@ -129,8 +129,8 @@ int main()
     //HAUtilities::Shader lightSourceShader("LightSource.vs", "LightSource.fs");
 
     glEnable(GL_DEPTH_TEST);
-    //glDepthFunc(GL_ALWAYS);
     glEnable(GL_MULTISAMPLE);
+    glEnable(GL_STENCIL_TEST);
 
     while (!glfwWindowShouldClose(window))
     {
