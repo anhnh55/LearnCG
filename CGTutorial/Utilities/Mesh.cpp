@@ -36,8 +36,18 @@ namespace HAUtilities {
 				++specularNr;
 			}
 
+			else if (textureType == CUBE_TEXTURE_STRING) {
+				number = "1";
+			}
+
 			shader.SetUniform(("material." + textureType + number), i);
-			glBindTexture(GL_TEXTURE_2D, textures[i].id);
+			if (textureType == CUBE_TEXTURE_STRING) {
+				glBindTexture(GL_TEXTURE_CUBE_MAP, textures[i].id);
+			}
+			else {
+				
+				glBindTexture(GL_TEXTURE_2D, textures[i].id);
+			}
 		}
 		glActiveTexture(GL_TEXTURE0);
 

@@ -1,16 +1,16 @@
 #version 330 core
 layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec3 aNormal;
-layout (location = 2) in vec2 aTexCoord;
 
-uniform mat4 modelMat;
 uniform mat4 viewMat;
 uniform mat4 projectionMat;
 
-out vec2 TexCoords;
+out vec3 TexCoords;
 
 void main()
 {
-    gl_Position = projectionMat*viewMat*modelMat*vec4(aPos, 1.0); 
-    TexCoords = aTexCoord;
+    vec4 pos = projectionMat*viewMat*vec4(aPos, 1.0); 
+    TexCoords = aPos;
+
+    //to get depth = 1
+    gl_Position = pos.xyww;
 }

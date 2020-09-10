@@ -1,10 +1,10 @@
 ﻿  Cubemap.cpp
-E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(189,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(255,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(256,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(259,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(260,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(261,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(262,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(278,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(255,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(340,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(341,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(344,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(345,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(346,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(347,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\CubeMap\Cubemap.cpp(363,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   CubeMap.vcxproj -> E:\GoogleDrive\Hokkaido\Learn CG\LearnCG\CGTutorial\x64\Debug\CubeMap.exe

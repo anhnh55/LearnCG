@@ -8,6 +8,8 @@ namespace HAUtilities {
     using namespace std;
 #define DIFFUSE_TEXTURE_STRING "texture_diffuse"
 #define SPECULAR_TEXTURE_STRING "texture_specular"
+#define CUBE_TEXTURE_STRING "texture_cube"
+
     enum ATTRIB_LAYOUT {
         POSITION = 0,
         NORMAL = 1,

@@ -145,10 +145,12 @@
     <ClCompile Include="Cubemap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CubeReflect.vs" />
     <None Include="Cube.fs" />
     <None Include="Cube.vs" />
     <None Include="CubeMap.fs" />
     <None Include="CubeMap.vs" />
+    <None Include="CubeReflect.fs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

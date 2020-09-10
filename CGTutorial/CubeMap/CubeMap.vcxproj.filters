@@ -32,5 +32,11 @@
     <None Include="CubeMap.vs">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="CubeReflect.fs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CubeReflect.vs">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

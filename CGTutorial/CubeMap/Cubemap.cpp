@@ -15,6 +15,7 @@ void processInputUpdate(GLFWwindow* window, float deltaTime);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void PrintStencilBuffer(GLubyte* data);
+unsigned int loadCubemap(std::vector<std::string> faces);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -67,49 +68,93 @@ int main()
     // tell stb_image.h to flip loaded texture's on the y-axis (before loading model).
     HAUtilities::stbi_set_flip_vertically_on_load(true);
 
+    //float cubeVertices[] = {
+    //    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+    //     0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+    //     0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+    //     0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+    //    -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+    //    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+
+    //    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
+    //     0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
+    //     0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
+    //     0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
+    //    -0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
+    //    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
+
+    //    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+    //    -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+    //    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+    //    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+    //    -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+    //    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+
+    //     0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+    //     0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+    //     0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+    //     0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+    //     0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+    //     0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+
+    //    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+    //     0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+    //     0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+    //     0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+    //    -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+    //    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+
+    //    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+    //     0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+    //     0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+    //     0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+    //    -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+    //    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
+    //};
+
     float cubeVertices[] = {
-        // back face
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, // bottom-left
-         0.5f, -0.5f, -0.5f,  1.0f, 0.0f, // bottom-right    
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-right              
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-right
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, // top-left
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, // bottom-left                
-        // front face
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-left
-         0.5f,  0.5f,  0.5f,  1.0f, 1.0f, // top-right
-         0.5f, -0.5f,  0.5f,  1.0f, 0.0f, // bottom-right        
-         0.5f,  0.5f,  0.5f,  1.0f, 1.0f, // top-right
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-left
-        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, // top-left        
-        // left face
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // top-right
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // bottom-left
-        -0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-left       
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // bottom-left
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // top-right
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-right
-        // right face
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // top-left
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-right      
-         0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // bottom-right          
-         0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // bottom-right
-         0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-left
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // top-left
-        // bottom face          
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // top-right
-         0.5f, -0.5f,  0.5f,  1.0f, 0.0f, // bottom-left
-         0.5f, -0.5f, -0.5f,  1.0f, 1.0f, // top-left        
-         0.5f, -0.5f,  0.5f,  1.0f, 0.0f, // bottom-left
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // top-right
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-right
-        // top face
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, // top-left
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-right
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // bottom-right                 
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // bottom-right
-        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, // bottom-left  
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f  // top-left 
+        // positions          // texture Coords
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+         0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+         0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+         0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+         0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+
+        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+         0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+         0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+         0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+         0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+         0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+         0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };
 
     float planeVertices[] = {
@@ -123,54 +168,103 @@ int main()
          5.0f, -0.5f, -5.0f,  2.0f, 2.0f
     };
 
-    float quadVertices[] = {
-        // positions   // texCoords
-        -1.0f,  1.0f, 0.0f, 0.0f, 1.0f,
-        -1.0f, -1.0f, 0.0f, 0.0f, 0.0f,
-         1.0f, -1.0f, 0.0f, 1.0f, 0.0f,
+    float skyboxVertices[] = {
+        // positions          
+        -1.0f,  1.0f, -1.0f,
+        -1.0f, -1.0f, -1.0f,
+         1.0f, -1.0f, -1.0f,
+         1.0f, -1.0f, -1.0f,
+         1.0f,  1.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,
 
-        -1.0f,  1.0f,  0.0f, 0.0f, 1.0f,
-         1.0f, -1.0f,  0.0f, 1.0f, 0.0f,
-         1.0f,  1.0f,  0.0f, 1.0f, 1.0f
+        -1.0f, -1.0f,  1.0f,
+        -1.0f, -1.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,
+        -1.0f,  1.0f,  1.0f,
+        -1.0f, -1.0f,  1.0f,
+
+         1.0f, -1.0f, -1.0f,
+         1.0f, -1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f, -1.0f,
+         1.0f, -1.0f, -1.0f,
+
+        -1.0f, -1.0f,  1.0f,
+        -1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f, -1.0f,  1.0f,
+        -1.0f, -1.0f,  1.0f,
+
+        -1.0f,  1.0f, -1.0f,
+         1.0f,  1.0f, -1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+        -1.0f,  1.0f,  1.0f,
+        -1.0f,  1.0f, -1.0f,
+
+        -1.0f, -1.0f, -1.0f,
+        -1.0f, -1.0f,  1.0f,
+         1.0f, -1.0f, -1.0f,
+         1.0f, -1.0f, -1.0f,
+        -1.0f, -1.0f,  1.0f,
+         1.0f, -1.0f,  1.0f
     };
-
     // build and compile our shader zprogram
     // ------------------------------------
-    std::vector<std::string> cubeTextures{ DIFFUSE_TEXTURE_STRING, "..\\Resources\\container.jpg" };
+    //std::vector<std::string> cubeTextures ;
+    std::vector<std::string> cubeTextures = { DIFFUSE_TEXTURE_STRING, "..\\Resources\\marble.jpg" };
     std::vector<std::string> planeTextures{ DIFFUSE_TEXTURE_STRING, "..\\Resources\\metal.png" };
-    std::vector<std::string> quadTextures;
+    std::vector<std::string> cubeMapTextures;
     HAUtilities::Model cubeModel(cubeVertices, sizeof(cubeVertices) / sizeof(float), false, true, cubeTextures);
+    //HAUtilities::Model cubeModel(cubeVertices, sizeof(cubeVertices) / sizeof(float), true, false, cubeTextures);
     HAUtilities::Model floorModel(planeVertices, sizeof(planeVertices) / sizeof(float), false, true, planeTextures);
-    HAUtilities::Model quadModel(quadVertices, sizeof(quadVertices) / sizeof(float), false, true, quadTextures);
+    HAUtilities::Model cubeMapModel(skyboxVertices, sizeof(skyboxVertices) / sizeof(float), false, false, cubeMapTextures);
 
     HAUtilities::Shader cubeShader("Cube.vs", "Cube.fs");
+    HAUtilities::Shader cubeReflectShader("CubeReflect.vs", "CubeReflect.fs");
+    HAUtilities::Shader cubeMapShader("CubeMap.vs", "CubeMap.fs");
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_MULTISAMPLE);
 
     //gen cube texture
+    std::vector<std::string> faces
+    {
+        "..\\Resources\\skybox\\right.jpg",
+        "..\\Resources\\skybox\\left.jpg",
+        "..\\Resources\\skybox\\top.jpg",
+        "..\\Resources\\skybox\\bottom.jpg",
+        "..\\Resources\\skybox\\front.jpg",
+        "..\\Resources\\skybox\\back.jpg"
+    };
+    unsigned int cubemapTexture = loadCubemap(faces);
+    std::vector<HAUtilities::Texture> textures;
+    HAUtilities::Texture texture;
+    texture.id = cubemapTexture;
+    texture.type = CUBE_TEXTURE_STRING;
+    textures.push_back(texture);
+    cubeMapModel.SetTextures(textures);
+    //cubeModel.SetTextures(textures);
 
     glm::mat4 modelMat = glm::mat4(1.0f);
     while (!glfwWindowShouldClose(window))
     {
-        //clear buffers
-        //glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
         float currentFrame = glfwGetTime();
         float deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
         processInputUpdate(window, deltaTime);
 
-        /*Draw to framebuffer*/
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // we're not using the stencil buffer now
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glEnable(GL_DEPTH_TEST);
 
         cubeShader.Use();
         glm::vec3 camPos = freeMovementCamera.GetPosition();
-        cubeShader.SetUniform("viewPos", camPos.x, camPos.y, camPos.z);
+        //cubeShader.SetUniform("viewPos", camPos.x, camPos.y, camPos.z);
         cubeShader.SetMatrixUniform("viewMat", 1, GL_FALSE, glm::value_ptr(freeMovementCamera.GetViewMatrix()));
         cubeShader.SetMatrixUniform("projectionMat", 1, GL_FALSE, glm::value_ptr(freeMovementCamera.GetProjectionMatrix()));
         modelMat = glm::mat4(1.0f);
@@ -179,12 +273,34 @@ int main()
         cubeShader.SetMatrixUniform("modelMat", 1, GL_FALSE, glm::value_ptr(modelMat));
         cubeModel.Draw(cubeShader);
 
+        //cubeReflectShader.Use();
+        //glm::vec3 camPos = freeMovementCamera.GetPosition();
+        //cubeReflectShader.SetUniform("viewPos", camPos.x, camPos.y, camPos.z);
+        //cubeReflectShader.SetMatrixUniform("viewMat", 1, GL_FALSE, glm::value_ptr(freeMovementCamera.GetViewMatrix()));
+        //cubeReflectShader.SetMatrixUniform("projectionMat", 1, GL_FALSE, glm::value_ptr(freeMovementCamera.GetProjectionMatrix()));
+        //modelMat = glm::mat4(1.0f);
+        //modelMat = glm::translate(modelMat, glm::vec3(0.0f, 0.251f, 0.0f));
+        //modelMat = glm::scale(modelMat, glm::vec3(1.0f, 1.0f, 1.0f));
+        //cubeReflectShader.SetMatrixUniform("modelMat", 1, GL_FALSE, glm::value_ptr(modelMat));
+        //glm::mat3 normalMat = glm::mat3(glm::transpose(glm::inverse(modelMat)));
+        //cubeReflectShader.SetMatrixUniform("normMat", 1, GL_FALSE, glm::value_ptr(normalMat), 3);
+        //cubeModel.Draw(cubeReflectShader);
+
         //render floor
         modelMat = glm::mat4(1.0f);
         modelMat = glm::translate(modelMat, glm::vec3(0.0f, 0.0f, 0.0f));
         modelMat = glm::scale(modelMat, glm::vec3(0.5f, 0.5f, 0.5f));
         cubeShader.SetMatrixUniform("modelMat", 1, GL_FALSE, glm::value_ptr(modelMat));
         floorModel.Draw(cubeShader);
+
+        //render cubemap
+        glDepthFunc(GL_LEQUAL);
+        cubeMapShader.Use();
+        glm::mat4 cubeMapViewMatrix = glm::mat4(glm::mat3(freeMovementCamera.GetViewMatrix()));
+        cubeMapShader.SetMatrixUniform("viewMat", 1, GL_FALSE, glm::value_ptr(cubeMapViewMatrix));
+        cubeMapShader.SetMatrixUniform("projectionMat", 1, GL_FALSE, glm::value_ptr(freeMovementCamera.GetProjectionMatrix()));
+        cubeMapModel.Draw(cubeMapShader);
+        glDepthFunc(GL_LESS);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -249,6 +365,7 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 
 unsigned int loadCubemap(std::vector<std::string> faces)
 {
+    HAUtilities::stbi_set_flip_vertically_on_load(false);
     unsigned int textureID;
     glGenTextures(1, &textureID);
     glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
@@ -275,6 +392,6 @@ unsigned int loadCubemap(std::vector<std::string> faces)
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-
+    HAUtilities::stbi_set_flip_vertically_on_load(true);
     return textureID;
 }
